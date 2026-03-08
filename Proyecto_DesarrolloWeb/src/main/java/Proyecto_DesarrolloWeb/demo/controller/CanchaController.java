@@ -4,6 +4,8 @@
  */
 package Proyecto_DesarrolloWeb.demo.controller;
 
+import Proyecto_DesarrolloWeb.demo.domain.Cancha;
+import Proyecto_DesarrolloWeb.demo.service.CanchaService;
 import ch.qos.logback.core.model.Model;
 import jakarta.validation.Valid;
 import java.util.Locale;
@@ -87,9 +89,7 @@ public class CanchaController {
         }
     }
 
-    /**
-     * Formulario para modificar una cancha (solo administrador)
-     */
+    
     @GetMapping("/modificar/{idCancha}")
     public String modificar(@PathVariable("idCancha") Integer idCancha, Model model, RedirectAttributes redirectAttributes) {
         Optional<Cancha> canchaOpt = canchaService.getCancha(idCancha);
@@ -103,7 +103,7 @@ public class CanchaController {
     }
 
     /**
-     * Actualizar una cancha existente (solo administrador)
+     * Actualizar canchas
      */
     @PostMapping("/actualizar")
     public String actualizar(@Valid Cancha cancha, RedirectAttributes redirectAttributes) {
@@ -120,7 +120,7 @@ public class CanchaController {
     }
 
     /**
-     * Eliminar una cancha (solo administrador)
+     * Eliminar una cancha
      */
     @PostMapping("/eliminar")
     public String eliminar(Integer idCancha, RedirectAttributes redirectAttributes) {
