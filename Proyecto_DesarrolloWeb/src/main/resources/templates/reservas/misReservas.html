@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Bookings Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df20d",
+                        "primary-dark": "#0ab80a",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#102210",
+                        "accent-blue": "#0f172a", // Deep navy for text/headers
+                        "accent-blue-light": "#e0e7ff",
+                        "danger": "#ef4444",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Lexend", "sans-serif"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        /* Hide scrollbar for clean look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-accent-blue dark:text-white antialiased overflow-hidden">
+<div class="flex h-screen w-full overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="hidden md:flex flex-col w-72 bg-white dark:bg-[#1a2e1a] border-r border-gray-100 dark:border-gray-800 h-full flex-shrink-0">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-green-300 flex items-center justify-center text-accent-blue font-bold text-xl">
+                        K
+                    </div>
+<span class="text-xl font-bold tracking-tight text-accent-blue dark:text-white">ReservaCR</span>
+</div>
+<div class="flex flex-col gap-6">
+<!-- User Profile Snippet -->
+<div class="flex gap-3 p-3 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shrink-0" data-alt="Profile picture of Alex Morgan" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuARgVxenAKs7cXtulaFZBikT-tncqasaD05Kb0bWeQvAzJnpxPfDnsR6VR0vGrsmXTY3L18cmK9sg3MUopzSvQ2KlHdAclce9IA1ZEwJSVi5Vdm4GQvvfG_BALa-_BZMUTtt2Asad6MUITFquYsMaCjSSv1_qdJf4IrSFbp1ymZjl_2RgsjbtwG-nMubk5fYt9RKomMIxAV1xrdhCm95YrVjw0REomzfeWt2RkfoLXOUPfAMFabrT59Lb3pwL70e4GQogp2lxVK4wc");'></div>
+<div class="flex flex-col overflow-hidden">
+<h1 class="text-accent-blue dark:text-white text-sm font-semibold truncate">Alex Morgan</h1>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group" href="menPrincipal.html">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">Home</span>
+<span class="text-sm font-medium">Inicio</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary/10 text-primary-dark dark:text-primary" href="#">
+<span class="material-symbols-outlined text-primary-dark dark:text-primary fill-current">calendar_month</span>
+<span class="text-sm font-bold">My Bookings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">location_on</span>
+<span class="text-sm font-medium">Find Fields</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">groups</span>
+<span class="text-sm font-medium">Teams</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors group" href="#">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+</div>
+<div class="mt-auto p-6">
+<button class="flex w-full items-center justify-center gap-2 rounded-lg h-10 bg-primary text-accent-blue font-bold text-sm shadow-sm hover:bg-primary-dark hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>New Booking</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden bg-background-light dark:bg-background-dark relative">
+<!-- Mobile Header -->
+<header class="md:hidden flex items-center justify-between p-4 bg-white dark:bg-[#1a2e1a] border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-accent-blue font-bold">K</div>
+<span class="font-bold text-accent-blue dark:text-white">KickOff</span>
+</div>
+<button class="p-2 text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto no-scrollbar p-4 md:p-8 lg:px-12">
+<div class="max-w-5xl mx-auto space-y-8">
+<!-- Page Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+<div class="space-y-1">
+<h1 class="text-3xl md:text-4xl font-extrabold text-accent-blue dark:text-white tracking-tight">My Bookings</h1>
+<p class="text-gray-500 dark:text-gray-400 font-medium">Manage your upcoming matches and view past games.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="hidden sm:flex flex-col items-end mr-2">
+<span class="text-xs text-gray-400 font-medium uppercase tracking-wider">Next Match</span>
+<span class="text-sm font-bold text-primary-dark dark:text-primary">In 2 days</span>
+</div>
+<button class="md:hidden flex items-center justify-center rounded-lg h-10 px-4 bg-primary text-accent-blue font-bold text-sm shadow-sm">
+                                New Booking
+                            </button>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="bg-white dark:bg-[#1a2e1a] p-5 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col gap-1 relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">sports_soccer</span>
+</div>
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">Upcoming Matches</span>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-extrabold text-accent-blue dark:text-white">3</span>
+<span class="text-xs font-bold text-primary bg-primary/10 px-1.5 py-0.5 rounded">+1 new</span>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2e1a] p-5 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col gap-1 relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-blue-500">timer</span>
+</div>
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">Hours Played</span>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-extrabold text-accent-blue dark:text-white">14.5</span>
+<span class="text-xs font-bold text-blue-600 bg-blue-50 dark:bg-blue-900/30 dark:text-blue-300 px-1.5 py-0.5 rounded">this month</span>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a2e1a] p-5 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col gap-1 relative overflow-hidden group">
+<div class="absolute right-0 top-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-purple-500">history</span>
+</div>
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">Total Bookings</span>
+<div class="flex items-baseline gap-2">
+<span class="text-3xl font-extrabold text-accent-blue dark:text-white">28</span>
+</div>
+</div>
+</div>
+<!-- Tabs -->
+<div class="border-b border-gray-200 dark:border-gray-800">
+<nav aria-label="Tabs" class="-mb-px flex gap-6">
+<a aria-current="page" class="border-b-[3px] border-accent-blue dark:border-primary py-4 px-1 text-sm font-bold text-accent-blue dark:text-white" href="#">
+                                Upcoming
+                            </a>
+<a class="border-b-[3px] border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 hover:border-gray-300 transition-colors" href="#">
+                                Past History
+                            </a>
+<a class="border-b-[3px] border-transparent py-4 px-1 text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 hover:border-gray-300 transition-colors" href="#">
+                                Cancelled
+                            </a>
+</nav>
+</div>
+<!-- Booking List -->
+<div class="flex flex-col gap-4 pb-12">
+<!-- Card 1: Upcoming & Paid -->
+<div class="bg-white dark:bg-[#1a2e1a] rounded-xl p-4 md:p-6 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6">
+<!-- Image & Status -->
+<div class="relative shrink-0 w-full md:w-48 h-32 rounded-lg overflow-hidden group">
+<div class="absolute top-2 left-2 z-10">
+<span class="px-2 py-1 bg-primary text-accent-blue text-xs font-bold rounded shadow-sm">CONFIRMED</span>
+</div>
+<div class="bg-center bg-no-repeat bg-cover h-full w-full transition-transform duration-500 group-hover:scale-110" data-alt="Green soccer field at night with floodlights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBFtqpC9CcBRSEzNu1-Vp46DO2VD-IRFQYUDFwU9qYUBWQtu4cg5vf81GcCwQXBnsCbVz03mzASj3LjY7TLF2DvH51h_EtSfUU0_lzUBo2znCC0WDFZdBmuDI3wuieccIh6xDdr_VM11cHeMp37h0ojC40VHMGjTBI0Y5i5q_CzIbdfltg5qHaSgIHEoUxG3beRtFQKrQx0ScGCRVrCr0NOZujoIu0F4BVaGzNmlyO8rP5OE1yGzp7q4q5fXCYlOEbsyb-ZEg8j4UU");'></div>
+</div>
+<!-- Content -->
+<div class="flex-1 flex flex-col justify-between gap-4">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg md:text-xl font-bold text-accent-blue dark:text-white">Riverside Turf - Field A</h3>
+<div class="flex items-center text-gray-500 dark:text-gray-400 text-sm mt-1 gap-1">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>123 River Rd, Downtown District</span>
+</div>
+</div>
+<div class="text-right hidden sm:block">
+<p class="text-2xl font-black text-accent-blue dark:text-white">$120</p>
+<p class="text-xs text-primary-dark dark:text-primary font-bold">PAID</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-4 mt-4">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-gray-50 dark:bg-gray-800 rounded-md text-sm font-medium text-accent-blue dark:text-gray-200">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_today</span>
+<span>Oct 24, 2023</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-gray-50 dark:bg-gray-800 rounded-md text-sm font-medium text-accent-blue dark:text-gray-200">
+<span class="material-symbols-outlined text-primary text-[20px]">schedule</span>
+<span>18:00 - 19:30</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-gray-50 dark:bg-gray-800 rounded-md text-sm font-medium text-accent-blue dark:text-gray-200">
+<span class="material-symbols-outlined text-primary text-[20px]">group</span>
+<span>5v5 Match</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-3 mt-2 md:mt-0 pt-4 border-t border-gray-100 dark:border-gray-700 md:border-0 md:pt-0">
+<button class="flex-1 md:flex-none md:w-auto px-4 py-2 bg-gray-100 dark:bg-gray-800 text-accent-blue dark:text-white text-sm font-bold rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                                        View Details
+                                    </button>
+<button class="flex-1 md:flex-none md:w-auto px-4 py-2 border border-gray-200 dark:border-gray-700 text-danger text-sm font-bold rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors" onclick="document.getElementById('cancel-modal').classList.remove('hidden')">
+                                        Cancel Reservation
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Card 2: Upcoming & Pending -->
+<div class="bg-white dark:bg-[#1a2e1a] rounded-xl p-4 md:p-6 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6">
+<!-- Image & Status -->
+<div class="relative shrink-0 w-full md:w-48 h-32 rounded-lg overflow-hidden group">
+<div class="absolute top-2 left-2 z-10">
+<span class="px-2 py-1 bg-yellow-400 text-yellow-900 text-xs font-bold rounded shadow-sm">PENDING PAYMENT</span>
+</div>
+<div class="bg-center bg-no-repeat bg-cover h-full w-full transition-transform duration-500 group-hover:scale-110" data-alt="Indoor soccer arena with artificial blue turf" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDVrwXzQMS01DxMouzKZlLLANTXYTdxFn9IxtVHbinF48mNbosu16mSUp4pIk88HRrYA6JYARpkeCkfuWUFH4VNOxp0SLb9vRXItg9EgPaxK94A1B3SWPOACPyfvB7HLvShY--3ppEkEzkF4YFlpMjRuppBJYptjMES56W5X0IZG06U2_X8rVyjgmBSNp6EchHYnXX6J0hy7clIUfqB0tSFVNI2Pt6DV1N9wkNhLd6iUJ6KpfL42m4KPvkAsOkyYc53Q5CMH4Ep44A");'></div>
+</div>
+<!-- Content -->
+<div class="flex-1 flex flex-col justify-between gap-4">
+<div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg md:text-xl font-bold text-accent-blue dark:text-white">City Indoor Arena</h3>
+<div class="flex items-center text-gray-500 dark:text-gray-400 text-sm mt-1 gap-1">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span>45 Sports Ave, Uptown</span>
+</div>
+</div>
+<div class="text-right hidden sm:block">
+<p class="text-2xl font-black text-accent-blue dark:text-white">$90</p>
+<p class="text-xs text-yellow-600 font-bold">UNPAID</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-4 mt-4">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-gray-50 dark:bg-gray-800 rounded-md text-sm font-medium text-accent-blue dark:text-gray-200">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_today</span>
+<span>Oct 30, 2023</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-gray-50 dark:bg-gray-800 rounded-md text-sm font-medium text-accent-blue dark:text-gray-200">
+<span class="material-symbols-outlined text-primary text-[20px]">schedule</span>
+<span>20:00 - 21:00</span>
+</div>
+<div class="flex items-center gap-2 px-3 py-1.5 bg-gray-50 dark:bg-gray-800 rounded-md text-sm font-medium text-accent-blue dark:text-gray-200">
+<span class="material-symbols-outlined text-primary text-[20px]">group</span>
+<span>7v7 Match</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-3 mt-2 md:mt-0 pt-4 border-t border-gray-100 dark:border-gray-700 md:border-0 md:pt-0">
+<button class="flex-1 md:flex-none md:w-auto px-6 py-2 bg-primary text-accent-blue text-sm font-bold rounded-lg hover:bg-primary-dark shadow-sm hover:shadow transition-all">
+                                        Pay Now
+                                    </button>
+<button class="flex-1 md:flex-none md:w-auto px-4 py-2 text-gray-500 dark:text-gray-400 text-sm font-medium hover:text-danger transition-colors" onclick="document.getElementById('cancel-modal').classList.remove('hidden')">
+                                        Cancel
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Card 3: Small Past Booking (Example of History Style) -->
+<div class="opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+<div class="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4 border border-gray-100 dark:border-gray-800 flex items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="hidden sm:block w-16 h-16 rounded-lg bg-cover bg-center" data-alt="Close up of soccer ball on grass" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcQjhoOPfDQF5z8ZakWMK2wAY-Nr5NNxM4ZgmQwhg5HAqIK1qhZvPLQvMQC2zqeXeA8qiVveYRKm1i8deCr9wtm9glsEp7H7Hq9fBk-ZTNCYLAu2PDdB8k3SOw6YlRNteXmu_vkfazZxbuSrRuXTCBNjZkEXtxYjAhsaAj6d-b8LJLoB2huFGlIBJLxWZJ-jDyz_pO77T3s-GN5gamzxVgKZE2teHK-f-lFGxzxaOLAa1ShaomcqymrC_q2lfC44spd1qFIsf6wIQ");'></div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h4 class="font-bold text-accent-blue dark:text-white">Downtown 5v5</h4>
+<span class="text-[10px] font-bold px-1.5 py-0.5 bg-gray-200 text-gray-600 rounded">PLAYED</span>
+</div>
+<p class="text-sm text-gray-500">Sept 12 • 17:00 - 18:00</p>
+</div>
+</div>
+<button class="text-sm font-bold text-primary hover:underline">Book Again</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Cancellation Modal Overlay -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center bg-accent-blue/40 backdrop-blur-sm p-4" id="cancel-modal">
+<div class="bg-white dark:bg-[#1a2e1a] rounded-2xl shadow-2xl max-w-md w-full p-6 animate-in zoom-in-95 duration-200">
+<div class="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/30 text-danger flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-2xl">warning</span>
+</div>
+<h3 class="text-xl font-bold text-accent-blue dark:text-white mb-2">Cancel Reservation?</h3>
+<p class="text-gray-500 dark:text-gray-300 mb-6 leading-relaxed">
+                Are you sure you want to cancel this booking at <span class="font-semibold text-accent-blue dark:text-white">Riverside Turf</span>? This action cannot be undone and you may be charged a late cancellation fee.
+            </p>
+<div class="flex flex-col sm:flex-row gap-3">
+<button class="flex-1 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-white font-bold rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" onclick="document.getElementById('cancel-modal').classList.add('hidden')">
+                    Keep Booking
+                </button>
+<button class="flex-1 px-4 py-2.5 bg-danger text-white font-bold rounded-lg hover:bg-red-600 shadow-sm transition-colors" onclick="document.getElementById('cancel-modal').classList.add('hidden')">
+                    Yes, Cancel
+                </button>
+</div>
+</div>
+</div>
+</body></html>

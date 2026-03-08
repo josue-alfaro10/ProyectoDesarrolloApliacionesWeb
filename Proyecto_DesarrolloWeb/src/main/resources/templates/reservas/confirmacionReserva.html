@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Confirmación de Reserva - ReservaCanchaCR</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df20d",
+                        "primary-dark": "#0ab80a",
+                        "secondary": "#1e3a8a", // Navy blue for accents
+                        "secondary-light": "#3b82f6",
+                        "background-light": "#f5f8f5",
+                        "background-dark": "#102210",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2e1a",
+                        "text-main": "#111811",
+                        "text-sub": "#608a60",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                    boxShadow: {
+                        'sport': '0 4px 20px -2px rgba(13, 242, 13, 0.15)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(rgba(13, 242, 13, 0.1) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main font-display min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<!-- Logo -->
+<div class="flex items-center gap-2">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined">sports_soccer</span>
+</div>
+<h2 class="text-xl font-black tracking-tight text-gray-900 dark:text-white">ReservaCanchaCR</h2>
+</div>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="menPrincipal.html">Inicio</a>
+<a class="text-sm font-semibold text-gray-600 dark:text-gray-300 hover:text-primary transition-colors" href="#">Canchas</a>
+</nav>
+<!-- User Menu -->
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-3 py-1.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+<div class="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="User avatar with initials AK" 
+src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS1H-aMFw-xT7m5nkuH23hYHBOn0XJPvG7HZCjVP9Z9rthNNOHfMZ9sqGTGRadfjhAcas2v00PYrLSjH1BpcVUIR7tzTu5sjSbSSTNnZgLBE32_vzk72IIBI2yUYIef83-WzOU8JGYZd-bSlznxahOXhBXv_Lmd4U6w3yOd8GXaKCJvDQZVqCJ04c8zWLzgF3pl7naFGJrGfxU7nKLOB2LohvDCPpXnOwTgQXP_RFsMf-VpPMK6eEKIH1wSSclCjp1bameQrXbXFM"/>
+
+
+</div>
+<span class="hidden sm:block text-sm font-medium text-gray-700 dark:text-gray-200">Alex K.</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow relative w-full bg-background-light dark:bg-background-dark">
+<!-- Background decorative elements -->
+<div class="absolute inset-0 bg-grid-pattern pointer-events-none opacity-50"></div>
+<div class="absolute top-0 right-0 w-1/3 h-1/3 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-0 left-0 w-1/4 h-1/4 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+<!-- Success Message Section -->
+<div class="text-center mb-8 sm:mb-12 animate-fade-in-up">
+<div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-6 relative">
+<div class="absolute inset-0 rounded-full bg-primary/20 animate-ping"></div>
+<span class="material-symbols-outlined text-5xl text-primary font-bold">check_circle</span>
+</div>
+<h1 class="text-3xl sm:text-4xl font-black text-gray-900 dark:text-white mb-3">Cancha Reservada</h1>
+<p class="text-lg text-gray-600 dark:text-gray-300 max-w-lg mx-auto">
+                    Estas listo para jugar, Se te enviara un recordatorio a <span class="font-semibold text-gray-900 dark:text-white">alex.k@example.com</span>.
+                </p>
+</div>
+<!-- Booking Card -->
+<div class="bg-surface-light dark:bg-surface-dark rounded-2xl shadow-sport overflow-hidden border border-gray-100 dark:border-gray-800">
+<!-- Card Header with Reservation ID -->
+<div class="bg-gray-50 dark:bg-gray-800/50 px-6 py-4 flex flex-col sm:flex-row justify-between items-center border-b border-gray-100 dark:border-gray-700 gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary dark:text-secondary-light">receipt_long</span>
+<span class="text-sm font-medium text-gray-500 dark:text-gray-400">Reservation ID:</span>
+<span class="text-base font-bold font-mono text-gray-900 dark:text-white bg-gray-200 dark:bg-gray-700 px-2 py-0.5 rounded">#RES-8821</span>
+</div>
+<div class="flex items-center gap-2 text-primary font-bold text-sm bg-primary/10 px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+                        PAYMENT SUCCESSFUL
+                    </div>
+</div>
+<div class="flex flex-col md:flex-row">
+<!-- Left: Details -->
+<div class="p-6 md:p-8 flex-1 space-y-6">
+<!-- Main Field Info -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0 text-secondary dark:text-secondary-light">
+<span class="material-symbols-outlined text-2xl">stadium</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">Complejo deportivo central</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                    Cancha 4 • Complejo deportivo central
+                                </p>
+</div>
+</div>
+<!-- Grid Details -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-8 pt-4 border-t border-gray-100 dark:border-gray-700">
+<!-- Date & Time -->
+<div class="space-y-1">
+<p class="text-xs uppercase tracking-wider font-bold text-gray-400 dark:text-gray-500">Fecha &amp; Hora</p>
+<div class="flex items-center gap-2 text-gray-900 dark:text-white font-semibold">
+<span class="material-symbols-outlined text-primary text-[20px]">calendar_today</span>
+<span>Vie, Oct 24</span>
+</div>
+<div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 pl-7">
+<span>18:00 - 19:30</span>
+</div>
+</div>
+<!-- Duration & Type -->
+<div class="space-y-1">
+<div class="flex items-center gap-2 text-gray-900 dark:text-white font-semibold">
+<span class="material-symbols-outlined text-secondary dark:text-secondary-light text-[20px]">timer</span>
+<span>90 Minutes</span>
+</div>
+<div class="flex items-center gap-2 text-gray-700 dark:text-gray-300 pl-7">
+<span>Fut5 • Cancha Sintetica</span>
+</div>
+</div>
+<!-- Payment Method -->
+<div class="space-y-1">
+<p class="text-xs uppercase tracking-wider font-bold text-gray-400 dark:text-gray-500">Metodo de Pago</p>
+<div class="flex items-center gap-2 text-gray-900 dark:text-white font-semibold">
+<span class="material-symbols-outlined text-gray-400 text-[20px]">Tarjeta</span>
+<span>Visa **** 4242</span>
+</div>
+</div>
+<!-- Total -->
+<div class="space-y-1">
+<p class="text-xs uppercase tracking-wider font-bold text-gray-400 dark:text-gray-500">Total</p>
+<div class="flex items-center gap-2 text-2xl font-black text-secondary dark:text-secondary-light">
+                                    $120.00
+                                </div>
+</div>
+</div>
+</div>
+<!-- Right: Visual/Map -->
+<div class="md:w-72 bg-gray-50 dark:bg-gray-800 border-l border-gray-100 dark:border-gray-700 p-4 flex flex-col gap-4">
+<div class="relative w-full aspect-video md:aspect-square rounded-xl overflow-hidden shadow-inner group">
+<!-- Field Image -->
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Overhead view of a green soccer field at night with floodlights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkrxHDVvvTZyB5NGfZa9q_jY-vkBLeFpecLItIeHHyBBz-S7ljsAhxR90jhB1qwluBXXfvq5420jzRjSeuL-_I4Il4Sjuz66j66x8yzKFdrrHeC48BLUiwWvxlOCHc3kmFiL18QjeEuZxLm1xCscF_x1-uah7WujkIyuSJWGHWBCvHtsEjwNW8Iw1ZQCkl4EoYLNIOvvEyRXheDFjOi-TH3rYiZo_gJfY7PZ55OupM1pi21qUVHmgWjvJAaJtsSkUi30Xxopae2ag");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 text-white">
+</div>
+</div>
+<div class="flex justify-between items-center mb-2">
+</div>
+
+
+</div>
+</div>
+</div>
+<!-- Card Footer Actions -->
+<div class="bg-gray-50 dark:bg-gray-800/50 p-6 flex flex-col sm:flex-row gap-4 justify-center sm:justify-end border-t border-gray-100 dark:border-gray-700">
+<button class="order-2 sm:order-1 flex items-center justify-center gap-2 px-6 h-12 rounded-lg border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 font-bold text-sm hover:border-gray-400 dark:hover:border-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all bg-transparent w-full sm:w-auto">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                        Download Receipt
+                    </button>
+
+</div>
+</div>
+<!-- Help / Reschedule Link -->
+<p class="text-center mt-8 text-sm text-gray-500 dark:text-gray-400">
+                Need to reschedule? <a class="text-secondary dark:text-secondary-light font-bold hover:underline" href="#">Check our cancellation policy</a> or contact support.
+            </p>
+</div>
+</main>
+<!-- Simple Footer -->
+<footer class="w-full py-8 text-center border-t border-gray-100 dark:border-gray-800 mt-auto bg-surface-light dark:bg-surface-dark">
+<div class="flex items-center justify-center gap-2 mb-4 opacity-50 grayscale hover:grayscale-0 transition-all">
+<div class="size-6 bg-primary rounded flex items-center justify-center text-background-dark text-xs">
+<span class="material-symbols-outlined text-[16px]">sports_soccer</span>
+</div>
+<span class="font-bold text-gray-900 dark:text-white">PitchPerfect</span>
+</div>
+<p class="text-sm text-gray-400 dark:text-gray-600">© 2023 PitchPerfect Inc. All rights reserved.</p>
+</footer>
+</body></html>
