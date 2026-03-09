@@ -9,9 +9,13 @@ import Proyecto_DesarrolloWeb.demo.domain.Usuario;
 import Proyecto_DesarrolloWeb.demo.repository.RolRepository;
 import Proyecto_DesarrolloWeb.demo.repository.UsuarioRepository;
 import jakarta.transaction.Transactional;
+import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *

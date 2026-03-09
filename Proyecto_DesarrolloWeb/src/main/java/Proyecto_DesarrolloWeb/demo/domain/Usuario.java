@@ -34,9 +34,11 @@ public class Usuario implements Serializable {
     @Column(name = "id_usuario")
     private Integer idUsuario;
     private String password;
+    private String username;
     private String nombre;
     private String apellidos;
     private String correo;
+    private String rutaImagen;
     private String telefono;
     private boolean activo;
 

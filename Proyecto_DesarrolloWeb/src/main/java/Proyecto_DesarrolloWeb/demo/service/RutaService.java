@@ -28,4 +28,5 @@ public class RutaService {
         return rutaRepository.findAllByOrderByRequiereRolAsc();
     }
     
+    
 }
