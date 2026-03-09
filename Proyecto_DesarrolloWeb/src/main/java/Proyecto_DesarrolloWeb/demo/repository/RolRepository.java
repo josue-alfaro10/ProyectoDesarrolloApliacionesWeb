@@ -4,18 +4,16 @@
  */
 package Proyecto_DesarrolloWeb.demo.repository;
 
-import Proyecto_DesarrolloWeb.demo.domain.Ruta;
-import java.util.List;
+import Proyecto_DesarrolloWeb.demo.domain.Rol;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 /**
  *
  * @author Alfaro
  */
-@Repository
-public interface RutaRepository extends JpaRepository<Ruta, Integer> {
-    
-    public List<Ruta> findAllByOrderByRequiereRolAsc();
-    
+public interface RolRepository extends JpaRepository<Rol, Integer> {
+
+    public Optional<Rol> findByRol(String rol);
+
 }
